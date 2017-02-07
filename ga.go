@@ -110,3 +110,7 @@ func (ga *GA) PrintPop() {
 		fmt.Printf("%2d: %s Score = %f\n", i, ga.pop[i], ga.pop[i].Score())
 	}
 }
+
+func (ga *GA) InsertGenome(genome GAGenome) {
+	ga.pop[0] = genome.Copy()
+}

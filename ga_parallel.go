@@ -87,3 +87,9 @@ func (ga *GAParallel) Best() GAGenome {
 	}
 	return best
 }
+
+func (ga *GAParallel) InsertGenome(genome GAGenome) {
+	for _, innerga := range ga.ga {
+		innerga.InsertGenome(genome)
+	}
+}
